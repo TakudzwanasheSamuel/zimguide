@@ -1,0 +1,46 @@
+'use client';
+
+import { ArrowRight, Mail } from 'lucide-react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Aurora } from '@/components/motion/aurora';
+import { Reveal } from '@/components/motion/reveal';
+
+export function CTA() {
+  return (
+    <section id="contact" className="relative py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-card/60 px-6 py-16 text-center backdrop-blur-xl lg:px-16 lg:py-24">
+            <Aurora className="opacity-60" />
+            <div className="relative">
+              <h2 className="mx-auto max-w-2xl text-balance text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl lg:leading-[1.1]">
+                Bring your institution onto{' '}
+                <span className="gradient-text text-glow">sovereign infrastructure</span>
+              </h2>
+              <p className="mx-auto mt-5 max-w-xl text-balance text-base leading-relaxed text-muted-foreground md:text-lg">
+                Request access for your university, ministry, archive, or
+                enterprise. We&apos;ll guide you through verified onboarding and
+                your first curated dataset.
+              </p>
+              <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <Button size="lg" className="group gap-2" asChild>
+                  <Link href="#contact">
+                    Request access
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" className="gap-2 bg-secondary/30" asChild>
+                  <Link href="#contact">
+                    <Mail className="h-4 w-4" />
+                    Talk to our team
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
